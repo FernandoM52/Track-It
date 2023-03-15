@@ -10,7 +10,6 @@ input{
     margin-bottom: 10px;
     padding: 0px 10px;
     font-family: 'Lexend Deca', sans-serif;
-    font-weight: 400;
     font-size: 20px;
     line-height: 25px;
     color: #666666;
@@ -24,8 +23,19 @@ input{
     }
 }
 
+button{
+    font-family: 'Lexend Deca', sans-serif;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
 h1{
     font-family: 'Playball', cursive;
+}
+
+p{
+    font-family: 'Lexend Deca', sans-serif;
 }
 `;
 export default GlobalStyle;
