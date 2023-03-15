@@ -19,7 +19,7 @@ input{
         color: #DBDBDB;
     }
     &:disabled{
-        background-color: #F2F2F2;
+        background-color: #D4D4D4;
     }
 }
 

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { LoginContainer } from "./stylePaginaLogin";
-import Logo from "../../assets/imgs/logo.svg"
+import Logo from "../../assets/imgs/logo.png"
 export default function PaginaLogin() {
 
     function entrar(e) {
