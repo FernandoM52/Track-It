@@ -23,13 +23,7 @@ export default function App() {
               />
             }
             />
-            <Route path="/cadastro" element={
-              <PaginaCadastro
-                image={image}
-                setImage={setImage}
-              />
-            }
-            />
+            <Route path="/cadastro" element={<PaginaCadastro setImage={setImage} />} />
             <Route path="/habitos" element={<PaginaHabitos />} />
             <Route path="/hoje" element={<PaginaHabitosHoje />} />
             <Route path="/historico" element={<PaginaHistorico />} />

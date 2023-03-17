@@ -19,7 +19,8 @@ input{
         color: #DBDBDB;
     }
     &:disabled{
-        background-color: #D4D4D4;
+        background-color: #F2F2F2;
+        opacity: 0.7;
     }
 }
 
@@ -27,6 +28,10 @@ button{
     font-family: 'Lexend Deca', sans-serif;
     &:hover{
         cursor: pointer;
+    }
+    &:disabled{
+        cursor: default;
+        opacity: 0.7;
     }
 }
 

@@ -1,10 +1,14 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import { myContext } from "../constants/myContext";
 
 export default function Header() {
+    const { image } = useContext(myContext);
+
     return (
         <Topo>
             <h1>TrackIt</h1>
-            <img src="https://criticalhits.com.br/wp-content/uploads/2018/03/one-piece-ace-lives-1006367-1280x01-910x513.jpg" alt="Foto de perfil"></img>
+            <img src={image} alt="Foto de perfil"></img>
         </Topo>
     );
 }
