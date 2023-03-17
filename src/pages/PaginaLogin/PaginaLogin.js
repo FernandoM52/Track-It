@@ -1,10 +1,28 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LoginContainer } from "./stylePaginaLogin";
-import Logo from "../../assets/imgs/logo.png"
-export default function PaginaLogin() {
+import { useState } from "react";
+import { BASE_URL } from "../../constants/url";
+import axios from "axios";
+import Logo from "../../assets/imgs/logo.png";
+import Loader from 'react-loader-spinner';
 
-    function entrar(e) {
+export default function PaginaLogin({ isLogged, setIsLogged }) {
+    const [isSubmited, setIsSubmited] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+    function login(e) {
         e.preventDefault();
+        setIsSubmited(true);
+
+        const postObject = { email, password };
+        axios.post(`${BASE_URL}/auth/login`, postObject)
+            .then(res => console.log(res.data))
+            .catch(err => {
+                alert(err.response.data);
+                setIsSubmited(false);
+            })
     }
 
     return (
@@ -12,23 +30,39 @@ export default function PaginaLogin() {
             <img src={Logo} alt="Logo Track-It"></img>
 
             <form>
-                <label htmlFor="email"></label>
                 <input
-                    type={"text"}
+                    data-test="email-input"
                     id="email"
+                    type={"text"}
                     placeholder="email"
+                    value={email}
+                    disabled={isSubmited}
+                    onChange={(e) => setEmail(e.target.value)}
                 >
                 </input>
                 <input
-                    type={"password"}
+                    data-test="password-input"
                     id="senha"
+                    type={"password"}
                     placeholder="senha"
+                    value={password}
+                    disabled={isSubmited}
+                    onChange={(e) => setPassword(e.target.value)}
                 >
                 </input>
-                <button onSubmit={entrar}>Entrar</button>
+
+                <button
+                    data-test="login-btn"
+                    onSubmit={login}
+                    disabled={isSubmited}
+                >
+                    Entrar
+
+                </button>
+
             </form>
 
-            <Link to={"/cadastro"}>
+            <Link data-test="signup-link" to={"/cadastro"}>
                 <p>Não tem uma conta? Cadastre-se!</p>
             </Link>
         </LoginContainer>
