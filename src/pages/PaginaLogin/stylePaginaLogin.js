@@ -31,6 +31,9 @@ export const LoginContainer = styled.div`
             &:hover{
                 background-color: #CFCFCF;
             }
+            &:disabled{
+                background-color: #52B6FF;
+            }
         }
     }
     
