@@ -3,7 +3,7 @@ import { LoginContainer } from "./stylePaginaLogin";
 import Logo from "../../assets/imgs/logo.png";
 import LoginForm from "./LoginForm";
 
-export default function PaginaLogin({ isLogged, setIsLogged }) {
+export default function PaginaLogin() {
     return (
         <LoginContainer>
             <img src={Logo} alt="Logo Track-It"></img>

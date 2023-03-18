@@ -1,14 +1,14 @@
-import styled from "styled-components";
 import { useContext } from "react";
 import { myContext } from "../constants/myContext";
+import styled from "styled-components";
 
 export default function Header() {
-    const { image } = useContext(myContext);
+    const { isLogged, image } = useContext(myContext)
 
     return (
-        <Topo>
+        <Topo data-test="header">
             <h1>TrackIt</h1>
-            <img src={image} alt="Foto de perfil"></img>
+            <img src={isLogged ? image : "Foto de perfil"} alt="Foto de perfil"></img>
         </Topo>
     );
 }
@@ -27,7 +27,7 @@ justify-content: space-between;
 
 h1{
     color: #FFFFFF;
-    padding-left: 18px;
+    margin-left: 18px;
     font-size: 39px;
     line-height: 49px;
 }

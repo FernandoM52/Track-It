@@ -1,6 +1,10 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+*{
+    box-sizing: border-box;
+}
+
 input{
     background-color: #FFFFFF;
     width: 303px;
@@ -39,8 +43,24 @@ h1{
     font-family: 'Playball', cursive;
 }
 
-p{
+h2{
+font-size: 23px;
+line-height: 29px;
+color: #126BA5;
+}
+
+h3{
+    color: #666666;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+h2, h3, p{
     font-family: 'Lexend Deca', sans-serif;
+}
+
+a{
+    text-decoration: none;
 }
 `;
 export default GlobalStyle;

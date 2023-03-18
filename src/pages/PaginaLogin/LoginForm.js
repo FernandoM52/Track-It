@@ -6,7 +6,7 @@ import Loader from "../../components/Loader";
 import axios from "axios";
 
 export default function LoginForm() {
-    const { isLogged, setIsLogged } = useContext(myContext)
+    const { isLogged, setIsLogged, setImage } = useContext(myContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -19,10 +19,18 @@ export default function LoginForm() {
         axios.post(`${BASE_URL}/auth/login`, postObject)
             .then(res => {
                 console.log(res.data)
+                setImage(res.data.image);
                 navigate("/hoje");
             })
             .catch(err => {
-                alert(err.response.data.message);
+                console.log(err.response.data)
+                if (email.length === 0) {
+                    alert(err.response.data.details[0]);
+                } else if (password.length === 0) {
+                    alert(err.response.data.details[1]);
+                } else if (!!email && !!password) {
+                    alert(err.response.data.message);
+                }
                 setIsLogged(false);
             })
     }

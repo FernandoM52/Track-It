@@ -9,21 +9,14 @@ import PaginaHistorico from './pages/PaginaHistorico/PaginaHistorico';
 
 export default function App() {
   const [isLogged, setIsLogged] = useState(false);
-  const [image, setImage] = useState(undefined);
-
+  const [image, setImage] = useState("");
   return (
     <>
       <BrowserRouter>
         <myContext.Provider value={{ isLogged, setIsLogged, image, setImage }}>
           <Routes>
-            <Route path="/" element={
-              <PaginaLogin
-                isLogged={isLogged}
-                setIsLogged={setIsLogged}
-              />
-            }
-            />
-            <Route path="/cadastro" element={<PaginaCadastro setImage={setImage} />} />
+            <Route path="/" element={<PaginaLogin />} />
+            <Route path="/cadastro" element={<PaginaCadastro />} />
             <Route path="/habitos" element={<PaginaHabitos />} />
             <Route path="/hoje" element={<PaginaHabitosHoje />} />
             <Route path="/historico" element={<PaginaHistorico />} />

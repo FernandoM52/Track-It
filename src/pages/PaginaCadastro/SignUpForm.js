@@ -6,11 +6,11 @@ import axios from "axios";
 import Loader from "../../components/Loader";
 
 export default function SignUpForm() {
-    const { setImage } = useContext(myContext);
-    const navigate = useNavigate();
-
     const [form, setForm] = useState({ email: "", password: "", name: "", image: "" });
     const [isLoading, setIsLoading] = useState(false);
+
+    const { setImage } = useContext(myContext);
+    const navigate = useNavigate();
 
     function handleForm(e) {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -19,12 +19,12 @@ export default function SignUpForm() {
     function signUp(e) {
         e.preventDefault();
         setIsLoading(true);
+        setImage(form.image)
 
         const postObject = { ...form };
         axios.post(`${BASE_URL}/auth/sign-up`, postObject)
             .then(res => {
                 console.log(res.data)
-                setImage(form.image);
                 navigate("/");
             })
             .catch(err => {
