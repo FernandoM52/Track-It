@@ -10,7 +10,7 @@ export const LoginContainer = styled.div`
         padding-bottom: 32px;
     }
     form{
-        width: 325px;
+        width: 303px;
         margin-bottom: 25px;
         display: flex;
         flex-direction: column;

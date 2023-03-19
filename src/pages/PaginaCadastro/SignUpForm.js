@@ -21,8 +21,7 @@ export default function SignUpForm() {
         setIsLoading(true);
         setImage(form.image)
 
-        const postObject = { ...form };
-        axios.post(`${BASE_URL}/auth/sign-up`, postObject)
+        axios.post(`${BASE_URL}/auth/sign-up`, form)
             .then(res => {
                 console.log(res.data)
                 navigate("/");

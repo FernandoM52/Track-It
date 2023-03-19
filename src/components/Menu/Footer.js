@@ -6,7 +6,7 @@ export default function Footer() {
     return (
         <Container data-test="menu">
             <button>
-                <Link to={"/habitos"} data-test="history-link">
+                <Link to={"/habitos"} data-test="habit-link">
                     Hábitos
                 </Link>
             </button>
@@ -14,7 +14,7 @@ export default function Footer() {
             <ProgressBar />
 
             <button>
-                <Link to={"/historico"} data-test="habit-link">
+                <Link to={"/historico"} data-test="history-link">
                     Histórico
                 </Link>
             </button>

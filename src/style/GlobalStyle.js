@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
 
 input{
     background-color: #FFFFFF;
-    width: 303px;
+    width: 100%;
     height: 45px;
     border: 1px solid #D4D4D4;
     border-radius: 5px;
