@@ -9,7 +9,7 @@ export default function PaginaCadastro() {
         <CadastroContainer>
             <img src={Logo} alt="Logo Track-It"></img>
 
-            <SignUpForm></SignUpForm>
+            <SignUpForm />
 
             <Link data-test="login-link" to={"/"}>
                 <p>Já tem uma conta? Faça login!</p>
