@@ -46,7 +46,6 @@ export default function Habits({ id, name, days, listUpdate, setListUpdate }) {
 const CardHabit = styled.li`
 background-color: #FFFFFF;
 width: 340px;
-height: 91px;
 border-radius: 5px;
 display: flex;
 flex-direction: column;
@@ -54,6 +53,7 @@ gap: 8px;
 position: relative;
 
 h3{
+    max-width: 320px;
     padding-top: 13px;
     padding-left: 15px;
 }
@@ -70,6 +70,7 @@ svg{
 const DaysWeekContainer = styled.div`
 width: 100%;
 padding-left: 15px;
+padding-bottom: 10px;
 display: flex;
 gap: 4px;
 `;

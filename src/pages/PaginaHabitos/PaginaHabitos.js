@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Header from "../../components/Header";
 import Footer from "../../components/Menu/Footer";
 import Habits from "../../components/Habits/Habits";
-import CardCreatingHabit from "../../components/Habits/CardCreatingHabit";
+import CardCreatingHabit from "../../components/Habits/CreateHabit/CardCreatingHabit";
 import axios from "axios";
 
 export default function PaginaHabitos() {
@@ -23,7 +23,7 @@ export default function PaginaHabitos() {
         axios.get(`${BASE_URL}/habits`, config)
             .then((res) => setHabitsList(res.data))
             .catch((err) => alert(err.response.data.message))
-    }, [navigate, listUpdate, habitsList]);
+    }, [navigate, listUpdate, habitsList, token, setHabitsList]);
 
     function createHabit() {
         setButtonClicked(true)
