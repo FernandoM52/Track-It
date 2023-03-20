@@ -5,7 +5,7 @@ import { Container } from "./styledMenu"
 export default function Footer() {
     return (
         <Container data-test="menu">
-            <button>
+            <button >
                 <Link to={"/habitos"} data-test="habit-link">
                     Hábitos
                 </Link>
@@ -21,4 +21,3 @@ export default function Footer() {
         </Container>
     );
 }
-

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Footer from "../../components/Menu/Footer";
 import Header from "../../components/Header";
 import { FaCheck } from "react-icons/fa";
+import { formatttDate } from "../../constants/dayjs"
 
 export default function PaginaHabitosHoje() {
     return (
@@ -9,7 +10,7 @@ export default function PaginaHabitosHoje() {
             <Header />
 
             <HomePageContainer>
-                <h2 data-test="today">Segunda, 17/05</h2>
+                <h2 data-test="today">{formatttDate}</h2>
                 <p data-test="today-counter">Nenhum hábito concluído ainda</p>
 
                 <TodayListContainer>

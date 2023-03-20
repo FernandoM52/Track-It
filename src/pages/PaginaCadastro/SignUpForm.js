@@ -6,7 +6,7 @@ import axios from "axios";
 import Loader from "../../components/Loader";
 
 export default function SignUpForm() {
-    const [form, setForm] = useState({ email: "", name: "", image: "", password: "",  });
+    const [form, setForm] = useState({ email: "", name: "", image: "", password: "" });
     const [isLoading, setIsLoading] = useState(false);
 
     const { setImage } = useContext(myContext);

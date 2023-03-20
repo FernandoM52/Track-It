@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { ProgressBarContainer } from "./styledMenu";
+import { ProgressBarContainer, Wrapper } from "./styledMenu";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 export default function ProgressBar() {
     return (
         <ProgressBarContainer>
-            <button>
+            <Wrapper>
                 <Link to={"/hoje"}>
                     <CircularProgressbar
                         value={50}
@@ -23,7 +23,7 @@ export default function ProgressBar() {
                         })}
                     />
                 </Link>
-            </button>
+            </Wrapper>
         </ProgressBarContainer>
     );
 }

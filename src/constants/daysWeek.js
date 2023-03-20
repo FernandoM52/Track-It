@@ -1,0 +1,1 @@
+export const daysWeek = ["D", "S", "T", "Q", "Q", "S", "S"];

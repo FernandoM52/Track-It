@@ -9,11 +9,14 @@ import PaginaHistorico from './pages/PaginaHistorico/PaginaHistorico';
 
 export default function App() {
   const [isLogged, setIsLogged] = useState(false);
+  const [habitsList, setHabitsList] = useState([]);
   const [image, setImage] = useState("");
+  const [token, setToken] = useState("")
+
   return (
     <>
       <BrowserRouter>
-        <myContext.Provider value={{ isLogged, setIsLogged, image, setImage }}>
+        <myContext.Provider value={{ isLogged, setIsLogged, image, setImage, token, setToken, habitsList, setHabitsList }}>
           <Routes>
             <Route path="/" element={<PaginaLogin />} />
             <Route path="/cadastro" element={<PaginaCadastro />} />

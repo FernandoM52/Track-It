@@ -12,23 +12,33 @@ align-items: center;
 justify-content: space-between;
 
 a{
-    text-decoration: none;
     color: #52B6FF;
     font-size: 18px;
     line-height: 22px;
+    pointer-events: initial;
 }
 
 button{
     border: none;
     background-color: transparent;
-    
+    pointer-events: none;
+}
+button:first-child{
+    padding-left: 30px;
+}
+button:last-child{
+    padding-right: 30px;
 }
 `;
 
-export const ProgressBarContainer = styled.div`
+export const ProgressBarContainer = styled.button`
+margin-bottom: 40px;
+overflow: hidden;
+`;
+
+export const Wrapper = styled.div`
 width: 91px;
 height: 91px;
-margin-bottom: 40px;
 border-radius: 50%;
-cursor: pointer;
+overflow: hidden;
 `;
