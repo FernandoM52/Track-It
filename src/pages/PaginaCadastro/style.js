@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export const CadastroContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: calc(100% - 95%);
+background-color: #FFFFFF;
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: calc(100% - 95%);
     img{
         padding-top: 68px;
         padding-bottom: 32px;

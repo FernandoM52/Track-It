@@ -20,8 +20,10 @@ export default function SignUpForm() {
         e.preventDefault();
         setIsLoading(true);
         setImage(form.image)
+        
+        const body = { ...form }
 
-        axios.post(`${BASE_URL}/auth/sign-up`, form)
+        axios.post(`${BASE_URL}/auth/sign-up`, body)
             .then(res => {
                 console.log(res.data)
                 navigate("/");
@@ -53,7 +55,7 @@ export default function SignUpForm() {
                 type={"password"}
                 placeholder="senha"
                 value={form.password}
-                //pattern="/^[a-zA-Z0-9_]{6,}$/"
+                pattern="/^[a-zA-Z0-9_]{6,}$/"
                 required
                 disabled={isLoading}
                 onChange={handleForm}

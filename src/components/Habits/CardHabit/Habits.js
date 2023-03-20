@@ -1,9 +1,9 @@
 import { useContext } from "react"
-import { myContext } from "../../constants/myContext"
-import { daysWeek } from "../../constants/daysWeek";
+import { myContext } from "../../../constants/myContext"
+import { daysWeek } from "../../../constants/daysWeek";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { BASE_URL } from "../../constants/url";
-import styled from "styled-components";
+import { BASE_URL } from "../../../constants/url";
+import { CardHabit, DaysWeekContainer, HabitsDays } from "./styled";
 import axios from "axios";
 
 export default function Habits({ id, name, days, listUpdate, setListUpdate }) {
@@ -42,51 +42,3 @@ export default function Habits({ id, name, days, listUpdate, setListUpdate }) {
         </CardHabit>
     )
 }
-
-const CardHabit = styled.li`
-background-color: #FFFFFF;
-width: 340px;
-border-radius: 5px;
-display: flex;
-flex-direction: column;
-gap: 8px;
-position: relative;
-
-h3{
-    max-width: 320px;
-    padding-top: 13px;
-    padding-left: 15px;
-}
-
-svg{
-    color: #666666;
-    position: absolute;
-    top: 11px;
-    right: 10px;
-    cursor: pointer;
-}
-`;
-
-const DaysWeekContainer = styled.div`
-width: 100%;
-padding-left: 15px;
-padding-bottom: 10px;
-display: flex;
-gap: 4px;
-`;
-
-const HabitsDays = styled.div`
-background-color: ${({ habitsDays }) => habitsDays ? "#cfcfcf" : "#FFFFFF"};
-width: 30px;
-height: 30px;
-border: 1px solid ${({ habitsDays }) => habitsDays ? "#cfcfcf" : "#D4D4D4"};
-border-radius: 5px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-family: 'Lexend Deca', sans-serif;
-font-size: 20px;
-line-height: 25px;
-color: ${({ habitsDays }) => habitsDays ? "#FFFFFF" : "#cfcfcf"};
-
-`

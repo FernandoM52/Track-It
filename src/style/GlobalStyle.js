@@ -5,6 +5,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
+body{
+    background-color: #E5E5E5;
+}
+
 input{
     background-color: #FFFFFF;
     width: 303px;

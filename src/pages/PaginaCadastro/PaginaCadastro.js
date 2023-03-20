@@ -1,4 +1,4 @@
-import { CadastroContainer } from "./stylePaginaCadastro";
+import { CadastroContainer } from "./style";
 import { Link } from "react-router-dom";
 import SignUpForm from "./SignUpForm";
 import Logo from "../../assets/imgs/logo.png"

@@ -8,8 +8,8 @@ import axios from "axios";
 
 export default function CardCreatingHabit({ setButtonClicked }) {
     const [name, setName] = useState("");
-    const [created, setCreated] = useState(false);
     const [days, setDays] = useState([]);
+    const [created, setCreated] = useState(false);
     const { token } = useContext(myContext)
 
     function handleClickDay(index) {
@@ -81,7 +81,14 @@ export default function CardCreatingHabit({ setButtonClicked }) {
                     </DaysButtonContainer>
 
                     <CardOptions>
-                        <button data-test="habit-create-cancel-btn" type="button" onClick={removeContainerCard}>Cancelar</button>
+                        <button
+                            data-test="habit-create-cancel-btn"
+                            type="button"
+                            disabled={created}
+                            onClick={removeContainerCard}
+                        >
+                            Cancelar
+                        </button>
 
                         <button data-test="habit-create-save-btn" type="sumit"
                             disabled={days.length === 0 || created}
